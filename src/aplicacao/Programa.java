@@ -37,6 +37,14 @@ public class Programa {
 		double precoDia = sc.nextDouble();
 		
 		ServicoAluguel servicoAluguel = new ServicoAluguel(precoDia, precoHora, new TaxaServicosBrasil());
+		//no momento da instanciacao new ServicoAluguel(precoDia, precoHora, new TaxaServicosBrasil());
+		//nessa instanciacao new TaxaServicosBrasil()) casando com o parametro do tipo taxa de serviço(interface) esta acontecendo um upcasting, injeção de dependencia por meio de construtor
+		/*o objeto de serviço de imposto do qual a classe public class ServicoAluguel depende é 
+		 * instanciado pelo programa principal, essa instancia injetada no public class ServicoAluguel 
+		 * por meio do construtor: public ServicoAluguel(Double precoDia, Double precoHora, TaxaServico taxaServico)
+		 * nesse sentido o programa principal ficou responsável por fornecer o local da dependencia*/
+		//public interface TaxaServico é um tipo genérico
+		//public class TaxaServicosBrasil é um tipo especifico concreto
 		servicoAluguel.processarFatura(rent);
 		
 		System.out.println("Dados do Aluguel: ");

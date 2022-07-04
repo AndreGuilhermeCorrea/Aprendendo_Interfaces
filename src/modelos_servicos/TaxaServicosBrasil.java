@@ -1,6 +1,6 @@
 package modelos_servicos;
 
-//classe que implemetentam a interface 
+//classe que implemetentam a interface e cumpre o contrato da interface
 public class TaxaServicosBrasil implements TaxaServico{
 
 	//método taxa que retornará quantia tipo double
